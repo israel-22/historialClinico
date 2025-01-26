@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <script>
+        function navigateToHistorialClinico() {
+            window.location.href = 'historialClinico';
+        }
+        function salir() {
+            alert('Gracias por usar nuestro sistema. ¡Hasta luego!');
+        }
+    </script>
 </head>
 <body>
 <div>
-    <h2>Bienbenido a nuestro sistema clinico</h2>
-    < <form>
-        <h3>Gestionador de formularios clinicos </h3>
+    <h2>Bienvenido a nuestro sistema clínico</h2>
+    <form>
+        <h3>Gestionador de formularios clínicos</h3>
         <br>
-        <button type="submit">Ingresar</button>
+        <button type="button" onclick="navigateToHistorialClinico()">Ingresar</button>
         <br>
-        <button type="submit">Salir</button>
+        <button type="button" onclick="salir()">Salir</button>
         <br>
-
     </form>
 </div>
 </body>

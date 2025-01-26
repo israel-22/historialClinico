@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Exitoso</title>
+</head>
+<body>
+<h2>Registro de paciente exitoso</h2>
+<p>¡El paciente se ha registrado correctamente!</p>
+
+<h3>Datos del Paciente</h3>
+<ul>
+    <li><strong>Nombre:</strong> <span th:text="${paciente.name}"></span></li>
+    <li><strong>Apellido:</strong> <span th:text="${paciente.lastName}"></span></li>
+    <li><strong>Cédula de Identidad:</strong> <span th:text="${paciente.cedulaIdentidad}"></span></li>
+    <li><strong>Email:</strong> <span th:text="${paciente.email}"></span></li>
+    <li><strong>Teléfono:</strong> <span th:text="${paciente.phone}"></span></li>
+    <li><strong>Dirección:</strong> <span th:text="${paciente.address}"></span></li>
+    <li><strong>Ciudad:</strong> <span th:text="${paciente.city}"></span></li>
+    <li><strong>País:</strong> <span th:text="${paciente.country}"></span></li>
+    <li><strong>SSN:</strong> <span th:text="${paciente.ssn}"></span></li>
+    <li><strong>Fecha de Nacimiento:</strong> <span th:text="${paciente.birthDate}"></span></li>
+    <li><strong>Edad:</strong> <span th:text="${paciente.age}"></span></li>
+    <li><strong>Altura:</strong> <span th:text="${paciente.height}"></span></li>
+    <li><strong>Peso:</strong> <span th:text="${paciente.weight}"></span></li>
+    <li><strong>Tipo de Sangre:</strong> <span th:text="${paciente.bloodType}"></span></li>
+    <li><strong>Género:</strong> <span th:text="${paciente.gender}"></span></li>
+</ul>
+
+<a href="/historialClinico">Regresar al formulario</a>
+</body>
+</html>

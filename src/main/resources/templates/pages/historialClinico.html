@@ -29,10 +29,17 @@
             cursor: pointer;
         }
     </style>
+
+    <script>
+        function guardarFormulario(event) {
+            event.preventDefault();
+            window.location.href = '/registroExitoso'; //
+        }
+    </script>
 </head>
 <body>
 <h1>Historiales Clínicos de Pacientes 2025</h1>
-<form th:object="${paciente}" method="post">
+<form th:object="${paciente}" method="post"  onsubmit="guardarFormulario(event)">
     <fieldset>
         <legend>Datos Personales</legend>
         <div>
