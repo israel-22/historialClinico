@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historiales Clinicos de Pacientes 2025</title>
+</head>
+<body>
+<h1>Historiales Clinicos de Pacientes 2025</h1>
+<form>
+    <p>Historiales Clinicos</p>
+
+    <label> Cedula de Identidad:</label>
+    <input type="text" th:field ="cedulaidentidad">
+    <span th:if="${#fields.hasErrors('cedulaIdentidad')}" th:errors="*{cedulaIdentidad}"> Cedula de Identidad Incorrecta</span>
+    </div>
+    <div>
+    <label> Nombre:</label>
+    <input type="text" th:field ="name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Nombre Incorrecto</span>
+    </div>
+    <div>
+    <label> Apellido:</label>
+    <input type="text" th:field ="lastName">
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> Apellido Incorrecto</span>
+    </div>
+    <div>
+        <label> Numero de Seguro Social:</label>
+        <input type="text" th:field ="ssn">
+        <span th:if="${#fields.hasErrors('ssn')}" th:errors="*{ssn}"> Numero de Seguro Social Incorrecto</span>
+    </div>
+    <div>
+    <input>
+    <label> Tipo de Sangre:</label>
+    <input type="text" th:field ="bloodType">
+    <span th:if="${#fields.hasErrors('bloodType')}" th:errors="*{bloodType}"> Tipo de Sangre Incorrecto</span>
+    </div>
+    <div>
+        <label> Edad:</label>
+        <input type="text" th:field ="age">
+        <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"> Edad Incorrecta</span>
+    </div>
+    <div>
+        <label> Altura:</label>
+        <input type="text" th:field ="height">
+        <span th:if="${#fields.hasErrors('height')}" th:errors="*{height}"> Altura Incorrecta</span>
+    </div>
+    <div>
+    <label> Peso:</label>
+    <input type="text" th:field ="weight">
+    <span th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"> Peso Incorrecto</span>
+    </div>
+    <div>
+    <label> Email:</label>
+    <input type="text" th:field ="email">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> Email Incorrecto</span>
+    </div>
+    <div>
+    <label> Fecha de Nacimiento:</label>
+    <input type="text" th:field ="birthDate">
+    <span th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"> Fecha Incorrecta</span>
+    </div>
+    <div>
+    <label> Telefono:</label>
+    <input type="text" th:field ="phone">
+    <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"> Telefono Incorrecto</span>
+    </div>
+    <div>
+    <label> Direccion:</label>
+    <input type="text" th:field ="address">
+    <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"> Direccion Incorrecta</span>
+    </div>
+    <div>
+    <label> Genero:</label>
+    <input type="text" th:field ="gender">
+    <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"> Genero Incorrecto</span>
+    </div>
+    <div>
+    <label> Ciudad:</label>
+    <input type="text" th:field ="city">
+    <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}"> Ciudad Incorrecta</span>
+    </div>
+    <div>
+    <label> Pais:</label>
+    <input type="text" th:field ="country">
+    <span th:if="${#fields.hasErrors('country')}" th:errors="*{country}"> Pais Incorrecto</span>
+    </div>
+    <div>
+
+
+    <button type="submit">Guardar</button>
+    <button type="submit">Cancelar</button>
+
+</form>
+</body>
+</html>
