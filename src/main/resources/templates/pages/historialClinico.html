@@ -52,10 +52,50 @@
             <input type="text" id="apellido" th:field="*{lastName}" required />
             <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Apellido Incorrecto</span>
         </div>
+
+        <div>
+            <label>Número de Seguro Social:</label>
+            <input type="number" th:field="*{ssn}" />
+            <span th:if="${#fields.hasErrors('ssn')}" th:errors="*{ssn}">Número de Seguro Social Incorrecto</span>
+        </div>
+        <div>
+            <label>Fecha de Nacimiento:</label>
+            <input type="date" th:field="*{birthDate}" />
+            <span th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}">Fecha Incorrecta</span>
+        </div>
+        <div>
+            <label>Edad:</label>
+            <input type="number" th:field="*{age}" />
+            <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Edad Incorrecta</span>
+        </div>
+
         <div>
             <label for="email">Email:</label>
             <input type="email" id="email" th:field="*{email}" required />
             <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Incorrecto</span>
+        </div>
+
+        <div>
+            <label>Teléfono:</label>
+            <input type="number" th:field="*{phone}" />
+            <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Teléfono Incorrecto</span>
+        </div>
+
+        <div>
+            <label>Dirección:</label>
+            <input type="text" th:field="*{address}" />
+            <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Dirección Incorrecta</span>
+        </div>
+        <div>
+            <label>Ciudad:</label>
+            <input type="text" th:field="*{city}" />
+            <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}">Ciudad Incorrecta</span>
+        </div>
+
+        <div>
+            <label>País:</label>
+            <input type="text" th:field="*{country}" />
+            <span th:if="${#fields.hasErrors('country')}" th:errors="*{country}">País Incorrecto</span>
         </div>
     </fieldset>
 
@@ -75,6 +115,14 @@
             <label for="tipoSangre">Tipo de Sangre:</label>
             <input type="text" id="tipoSangre" th:field="*{bloodType}" required />
             <span th:if="${#fields.hasErrors('bloodType')}" th:errors="*{bloodType}">Tipo de Sangre Incorrecto</span>
+        </div>
+        <div>
+            <label>Género:</label>
+            <input type="radio" id="masculino" value="masculino" th:field="*{gender}">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="femenino" value="femenino" th:field="*{gender}">
+            <label for="femenino">Femenino</label>
+            <span th:if="${#fields.hasErrors('gender')}" th:text="${#fields.errors('gender')}">Género Incorrecto</span>
         </div>
     </fieldset>
 
