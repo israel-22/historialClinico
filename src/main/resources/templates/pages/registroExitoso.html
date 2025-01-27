@@ -3,30 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro Exitoso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: green;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: blue;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: darkblue;
+        }
+    </style>
 </head>
 <body>
 <h2>Registro de paciente exitoso</h2>
 <p>¡El paciente se ha registrado correctamente!</p>
 
 <h3>Datos del Paciente</h3>
-<ul>
-    <li><strong>Nombre:</strong> <span th:text="${paciente.name}"></span></li>
-    <li><strong>Apellido:</strong> <span th:text="${paciente.lastName}"></span></li>
-    <li><strong>Cédula de Identidad:</strong> <span th:text="${paciente.cedulaIdentidad}"></span></li>
-    <li><strong>Email:</strong> <span th:text="${paciente.email}"></span></li>
-    <li><strong>Teléfono:</strong> <span th:text="${paciente.phone}"></span></li>
-    <li><strong>Dirección:</strong> <span th:text="${paciente.address}"></span></li>
-    <li><strong>Ciudad:</strong> <span th:text="${paciente.city}"></span></li>
-    <li><strong>País:</strong> <span th:text="${paciente.country}"></span></li>
+<p th:if="${paciente == null}" style="color: red;">
+    Error: No se encontraron datos del paciente. Por favor, regrese al formulario e intente de nuevo.
+</p>
+<ul th:if="${paciente != null}">
+    <li><strong>Nombre:</strong> <span th:text="${#strings.escapeHtml(paciente.name)}"></span></li>
+    <li><strong>Apellido:</strong> <span th:text="${#strings.escapeHtml(paciente.lastName)}"></span></li>
+    <li><strong>Cédula de Identidad:</strong> <span th:text="${#strings.escapeHtml(paciente.cedulaIdentidad)}"></span></li>
+    <li><strong>Email:</strong> <span th:text="${#strings.escapeHtml(paciente.email)}"></span></li>
+    <li><strong>Teléfono:</strong> <span th:text="${#strings.escapeHtml(paciente.phone)}"></span></li>
+    <li><strong>Dirección:</strong> <span th:text="${#strings.escapeHtml(paciente.address)}"></span></li>
+    <li><strong>Ciudad:</strong> <span th:text="${#strings.escapeHtml(paciente.city)}"></span></li>
+    <li><strong>País:</strong> <span th:text="${#strings.escapeHtml(paciente.country)}"></span></li>
     <li><strong>SSN:</strong> <span th:text="${paciente.ssn}"></span></li>
     <li><strong>Fecha de Nacimiento:</strong> <span th:text="${paciente.birthDate}"></span></li>
     <li><strong>Edad:</strong> <span th:text="${paciente.age}"></span></li>
     <li><strong>Altura:</strong> <span th:text="${paciente.height}"></span></li>
     <li><strong>Peso:</strong> <span th:text="${paciente.weight}"></span></li>
-    <li><strong>Tipo de Sangre:</strong> <span th:text="${paciente.bloodType}"></span></li>
-    <li><strong>Género:</strong> <span th:text="${paciente.gender}"></span></li>
+    <li><strong>Tipo de Sangre:</strong> <span th:text="${#strings.escapeHtml(paciente.bloodType)}"></span></li>
+    <li><strong>Género:</strong> <span th:text="${#strings.escapeHtml(paciente.gender)}"></span></li>
 </ul>
 
-<a href="/historialClinico">Regresar al formulario</a>
+<a th:href="@{/historialClinico}">Registrar un nuevo paciente</a>
 </body>
 </html>
